@@ -74,7 +74,7 @@ var app = {
       
     }
     var matchedCard = document.getElementsByClassName("match");
-    if(this.moves == 16) {
+    if(matchedCard.length == 16) {
       clearInterval(this.interval);
       document.getElementById('popupFinal').classList.remove('hidden-card');
       document.getElementById("totalTime").innerHTML = this.$timer.innerHTML;
