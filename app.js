@@ -61,7 +61,7 @@ var app = {
     if(this.moves < 12){
 
     }
-    else if(this.moves > 12 && this.moves< 20){
+    else if(this.moves >= 12 && this.moves < 20){
       var star = document.getElementsByClassName('fa-star')[2];
       if(star)
         star.classList.value = star.classList.value.replace('fa-star', 'fa-star-o');
@@ -146,12 +146,13 @@ var app = {
         self.openedCards.push(this);
         var length = self.openedCards.length;
         if(length === 2){
-          self.moveCounter();
+          
           if(self.openedCards[0].dataset.icon === self.openedCards[1].dataset.icon){
               self.matched();
           } else {
               self.unmatched();
           }
+          self.moveCounter();
       }
 
       }, false);
