@@ -1,0 +1,137 @@
+body {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.popupFinal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  text-align: center; }
+
+.hidden-card {
+  display: none; }
+
+.flip-box {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  flex-basis: 22%; }
+
+.wrapper {
+  height: 680px;
+  background: #8360c3;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top left, #2ebf91, #8360c3);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top left, #2ebf91, #8360c3);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 3em;
+  width: 660px; }
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px; }
+
+.flip-box-front {
+  background-color: #28343f;
+  color: black; }
+
+.flip-box-back {
+  background-color: #1ca8e0;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px; }
+
+.info-wrapper {
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  min-height: 30px; }
+
+.rotate-class .flip-box-inner {
+  transform: rotateY(180deg); }
+
+.disable {
+  pointer-events: none; }
+
+.match {
+  cursor: default;
+  animationbtn-primary-name: scaleUp;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
+  animation-delay: 0.3s; }
+  .match .flip-box-back {
+    background: #2ebf91;
+    font-size: 30px; }
+
+.unmatch {
+  animation-name: tilt;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
+  animation-delay: 0.3s; }
+  .unmatch .flip-box-back {
+    background: #e2043b; }
+
+@keyframes tilt {
+  from {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(10deg); }
+  to {
+    transform: rotate(0deg); } }
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  to {
+    transform: scale(1); } }
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #2ebf91;
+  padding: 10px;
+  display: inline-block; }
+
+@media (max-width: 480px) {
+  body .info-wrapper {
+    width: 100%; }
+  body .wrapper {
+    height: 560px;
+    width: 100%;
+    overflow-x: hidden; }
+  body .flip-box {
+    flex-basis: 21%; } }

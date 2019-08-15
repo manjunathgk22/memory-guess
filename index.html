@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Flip Game</title>
+</head>
+<body>
+  <div class="info-wrapper">
+      <span class="stars-wrapper">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </span>
+      <span>MOVES:<span class="moves"></span></span>
+      <span><span>TIME::</span><span class="timer">0hrs:0mins: 0sec</span></span>
+      <span class="restart" onclick="app.init()">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+      </span>
+  </div>
+
+  <div class="flip-box hidden-card flipBaseElement">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">
+        <div class="background-icon"></div>
+      </div>
+      <div class="flip-box-back">
+        <i class="fill-image fa"></i>
+      </div>
+    </div>
+  </div>
+  
+    <div class="wrapper"></div>
+
+    <div id="popupFinal" class="hidden-card popupFinal" >
+      <div class="content-2">
+          <h1> Congratulations you have won!!</h1>
+          <p>You completed the game in <span id="totalTime"></span></p>
+          <p>With <span id="totalMoves"></span> Moves and <span id="Rating"></span> Stars</p>
+          <div onclick="app.init()" class="btn btn-primary">Play again</div>
+      </div>          
+    </div>
+  
+  <script src="./app.js"></script>
+</body>
+</title>
